@@ -1,0 +1,36 @@
+{
+  "name": "nodejs-first-class-api",
+  "version": "1.0.0",
+  "description": "A first class REST API",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc && npm run lint",
+    "dev": "tsc --watch && nodemon --inspect dist",
+    "test": "npm run build && mocha dist/**/*.spec.js",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rick-roche/nodejs-first-class-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "rest",
+    "api"
+  ],
+  "author": "Rick Roché",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rick-roche/nodejs-first-class-api/issues"
+  },
+  "homepage": "https://github.com/rick-roche/nodejs-first-class-api#readme",
+  "devDependencies": {
+    "@types/mocha": "^2.2.48",
+    "@types/node": "^9.4.7",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2"
+  }
+}
