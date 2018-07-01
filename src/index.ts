@@ -1,33 +1,19 @@
-import * as Koa from 'koa';
-import * as compress from 'koa-compress';
-import * as koaLogger from 'koa-pino-logger';
-import * as responseTime from 'koa-response-time';
-import * as Router from 'koa-router';
+import { createServer } from './server';
+import { logger } from './utils/Logger';
 
-import { logger } from './lib/Logger';
+export async function init() {
+    try {
+        logger.info('Starting HTTP server');
 
-const app = new Koa();
-const router = new Router();
+        const port = Number(process.env.PORT) || 3000;
+        const app = createServer(logger);
 
-// app.use(async (ctx, next) => {
-//     // Log the request to the console
-//     winston.debug(`Url: ${ctx.url}`);
-//     // Pass the request to the next middleware function
-//     await next();
-// });
+        app.listen(port);
 
-// logging
-app.use(koaLogger());
-// x-response-time
-app.use(responseTime());
-// compression
-app.use(compress());
+        logger.info(`Application running on port: ${port}`);
+    } catch (e) {
+        logger.error(e, 'An error occurred while initializing application.');
+    }
+}
 
-router.get('/*', async ctx => {
-    ctx.body = 'Hello World!';
-});
-app.use(router.routes());
-
-app.listen(3000);
-
-logger.info('Koa application is up and running on port 3000');
+init();
