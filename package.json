@@ -43,7 +43,6 @@
     "@types/mocha": "^2.2.48",
     "@types/node": "^9.4.7",
     "@types/pino": "^4.16.0",
-    "@types/winston": "^2.3.9",
     "chai": "^4.1.2",
     "chai-things": "^0.2.0",
     "mocha": "^5.0.4",
@@ -56,12 +55,10 @@
   "dependencies": {
     "koa": "^2.5.1",
     "koa-compress": "^3.0.0",
-    "koa-logger": "^3.2.0",
     "koa-pino-logger": "^2.1.3",
     "koa-ratelimit": "^4.1.2",
     "koa-response-time": "^2.0.0",
     "koa-router": "^7.4.0",
-    "pino": "^4.17.3",
-    "winston": "^3.0.0"
+    "pino": "^4.17.3"
   }
 }
