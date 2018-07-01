@@ -1,25 +1,13 @@
 import * as Koa from 'koa';
 import * as compress from 'koa-compress';
-import * as logger from 'koa-logger';
+import * as koaLogger from 'koa-pino-logger';
 import * as responseTime from 'koa-response-time';
 import * as Router from 'koa-router';
-import * as winston from 'winston';
+
+import { logger } from './lib/Logger';
 
 const app = new Koa();
 const router = new Router();
-
-winston.configure({
-    level: 'debug',
-    format: winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`),
-    ),
-    transports: [
-        new winston.transports.Console({
-            format: winston.format.simple(),
-        }),
-    ],
-});
 
 // app.use(async (ctx, next) => {
 //     // Log the request to the console
@@ -29,7 +17,7 @@ winston.configure({
 // });
 
 // logging
-app.use(logger());
+app.use(koaLogger());
 // x-response-time
 app.use(responseTime());
 // compression
@@ -42,4 +30,4 @@ app.use(router.routes());
 
 app.listen(3000);
 
-winston.info('Koa application is up and running on port 3000');
+logger.info('Koa application is up and running on port 3000');
