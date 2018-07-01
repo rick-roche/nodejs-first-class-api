@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Just [Node.JS](https://nodejs.org/); I generally use the LTS which is 8.10.0 at time of writing.
+Just [Node.JS](https://nodejs.org/); I generally use the LTS which is 8.11.3 at time of writing.
 
 ### Installing
 
@@ -20,9 +20,23 @@ cd nodejs-first-class-api
 npm i
 ```
 
+### Running the API
+
+While developing on the project run in dev mode
+
+```sh
+npm run start:dev
+```
+
+To build and serve the compiled output run
+
+```sh
+npm start
+```
+
 ## Running the tests
 
-Two types of tests are included; unit tests (testing the internals) and end to end tests (testing the exposed interfaces)
+Two types of tests are included; unit tests (testing the internals) and integrations tests (testing the exposed interfaces)
 
 ### Unit tests
 
@@ -32,7 +46,7 @@ Explain what these tests test and why
 Give an example
 ```
 
-### End to end tests
+### Integration tests
 
 Explain what these tests test and why
 
@@ -46,6 +60,12 @@ The repo makes use of `tslint` and you can lint your code by running
 
 ```sh
 npm run lint
+```
+
+and to automatically fix linting errors for select rules run
+
+```sh
+npm run lint:fix
 ```
 
 ## Deployment
