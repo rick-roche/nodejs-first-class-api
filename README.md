@@ -77,6 +77,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
+* [TypeScript Node Starter](https://github.com/Microsoft/TypeScript-Node-Starter)
 * [building-a-node-js-app-with-typescript-tutorial](https://blog.risingstack.com/building-a-node-js-app-with-typescript-tutorial/)
-* Inspiration
-* etc
+* [10-best-practices-for-writing-node-js-rest-apis](https://blog.risingstack.com/10-best-practices-for-writing-node-js-rest-apis/)
+* [restify-project-seed-with-typescript-and-unit-test](http://www.sulhome.com/Blog/9/restify-project-seed-with-typescript-and-unit-test)
